@@ -1,73 +1,143 @@
-import Head from 'next/head';
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+import { Header } from '@/components/Header';
+import { useScroll } from '@/hooks/useScroll';
 
-import styles from '@/styles/Home.module.css';
+import { MdScreenshot } from 'react-icons/md';
+import { FaMobileAlt, FaRobot, FaWhatsapp } from 'react-icons/fa';
+
+import { Container, CardBody } from '@/styles/pages/home';
+import { useTheme } from 'styled-components';
+import Image from 'next/image';
+import { Footer } from '@/components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>TypeScript starter for Next.js</title>
-        <meta
-          name="description"
-          content="TypeScript starter for Next.js that includes all you need to build amazing apps"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  useScroll();
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+  const { colors } = useTheme();
 
-        <p className={styles.description}>
-          Get started by editing{` `}
-          <code className={styles.code}>src/pages/index.tsx</code>
-        </p>
+  const features = [
+    {
+      id: `1`,
+      title: `100% Responsivo`,
+      description: `Criação de sites totalmente resposivos.`,
+      icon: MdScreenshot,
+    },
+    {
+      id: `2`,
+      title: `SEO`,
+      description: `Sites planejados para funcionar a favor dos motores de busca.`,
+      icon: FaRobot,
+    },
+    {
+      id: `3`,
+      title: `Mobile`,
+      description: `Criação de aplicativos nativos, pra IOS e Android`,
+      icon: FaMobileAlt,
+    },
+  ];
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=typescript-nextjs-starter"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+  const Card = () => (
+    <CardBody>
+      <div className="slide slide1">
+        <div className="content">
+          <div className="image">
+            <img src="https://github.com/valcineijr.png" alt="" />
+          </div>
         </div>
-      </main>
+      </div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=typescript-nextjs-starter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{` `}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <div className="slide slide2">
+        <div className="content">
+          <h3>Nome do projeto</h3>
+          <p>Pequena descrição falando sobre o que o projeto se refere.</p>
+          <div className="link">
+            <span>Link: </span>
+            <Link href="/5">Ir para o projeto</Link>
+          </div>
+        </div>
+      </div>
+    </CardBody>
   );
+
+  return (
+    <>
+      <Header />
+      <Container>
+        <section className="intro ">
+          <h6>Apresentação dos meus trabalhos</h6>
+          <h1>Valcinei Furtado Cardozo Junior</h1>
+          <p>Adoro programar e aprender coisas novas!</p>
+          <p className="rating-text">
+            Sinta-se à vontade para entrar em contato ou dar uma olhada nos meus
+            trabalhos anteriores abaixo.
+          </p>
+        </section>
+
+        <section className="features reveal fade-left">
+          {features.map((item) => (
+            <div key={item.id} className="box">
+              <item.icon color={colors.primary} size={34} />
+              <div className="info">
+                <h3 className="title">{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <section className="show-case">
+          <div className="wrapper">
+            <div className="image reveal fade-left">
+              <Image
+                width={600}
+                height={600}
+                placeholder="blur"
+                blurDataURL="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif"
+                src="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif"
+                alt=""
+              />
+            </div>
+
+            <div className="information reveal fade-right">
+              <h6>Design é tudo</h6>
+              <h2>Apresente seus sites dessa forma.</h2>
+              <p>Ficou interessado?</p>
+              <p>Entre em contato pelo botão abaixo.</p>
+
+              <button>
+                <FaWhatsapp size={30} /> Chamar no Whatsapp
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="feedbacks ">
+          <div className="description reveal fade-bottom">
+            <h6>Projetos</h6>
+            <h1>Últimos projetos públicos.</h1>
+            <p>
+              Você pode conferir todos os meus projetos clicando no link abaixo,
+              clique em um projeto pra mais informações.
+            </p>
+            <Link href="/projects">Ver todos</Link>
+          </div>
+
+          <div className="grid reveal fade-bottom">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </section>
+        <Footer />
+      </Container>
+    </>
+  );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }
