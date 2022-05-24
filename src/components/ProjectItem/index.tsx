@@ -17,24 +17,19 @@ export function ProjectItem({ data }: Props) {
         </figure>
       </div>
 
-      {[`1`, `2`].map((link) => (
+      {data.links.map((link) => (
         <div key={link} className="links">
           <span>Link: </span> <a href={link}>Portfolio Page</a>
         </div>
       ))}
 
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod labore ad
-        recusandae quisquam explicabo nulla vero doloribus impedit dolorem unde
-        officia libero modi, consequatur velit quasi commodi pariatur laudantium
-        nam!
-      </p>
+      <p>{data.description}</p>
 
       <span>
         Tecnologias:{` `}
-        {[`1`, `2`, `3`, `4`, `5`, `6`].map((tech) => (
+        {data.techs.map((tech) => (
           <span key={tech} className="tech">
-            ReactJs |
+            {tech} |
           </span>
         ))}
       </span>
