@@ -21,6 +21,7 @@ export function Header() {
   const menuItens = [
     { name: `Home`, slug: `/` },
     { name: `Projetos`, slug: `/projects` },
+    { name: `Sobre`, slug: `/about` },
   ];
 
   return (

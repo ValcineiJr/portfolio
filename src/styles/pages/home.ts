@@ -163,7 +163,8 @@ export const Container = styled.main`
       color: #e4e4e4;
     }
 
-    button {
+    button,
+    a {
       padding: 0 20px;
       height: 60px;
       background: #ffffff;

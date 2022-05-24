@@ -25,6 +25,7 @@ export function Footer() {
   const fastLinks = [
     { name: `Home`, slug: `/` },
     { name: `Projetos`, slug: `/projects` },
+    { name: `Sobre`, slug: `/about` },
   ];
 
   const mediaIcons = [
@@ -45,7 +46,7 @@ export function Footer() {
     },
     { slug: `https://github.com/ValcineiJr`, icon: FaGithubAlt, color: `#fff` },
     {
-      slug: `https://github.com/ValcineiJr`,
+      slug: `https://api.whatsapp.com/send?phone=21988800405`,
       icon: FaWhatsapp,
       color: `#128C7E`,
     },

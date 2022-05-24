@@ -105,9 +105,13 @@ export default function Home() {
               <p>Ficou interessado?</p>
               <p>Entre em contato pelo botão abaixo.</p>
 
-              <button>
+              <a
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=21988800405"
+                rel="noreferrer"
+              >
                 <FaWhatsapp size={30} /> Chamar no Whatsapp
-              </button>
+              </a>
             </div>
           </div>
         </section>
