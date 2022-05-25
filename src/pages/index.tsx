@@ -55,7 +55,9 @@ export default function Home() {
           <p>Pequena descrição falando sobre o que o projeto se refere.</p>
           <div className="link">
             <span>Link: </span>
-            <Link href="/5">Ir para o projeto</Link>
+            <Link aria-label="Acessar o projeto" href="/5">
+              Ir para o projeto
+            </Link>
           </div>
         </div>
       </div>
@@ -107,6 +109,7 @@ export default function Home() {
               <p>Entre em contato pelo botão abaixo.</p>
 
               <a
+                aria-label="Iniciar conversa pelo whatsapp"
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=21988800405"
                 rel="noreferrer"
@@ -125,7 +128,9 @@ export default function Home() {
               Você pode conferir todos os meus projetos clicando no link abaixo,
               clique em um projeto pra mais informações.
             </p>
-            <Link href="/projects">Ver todos</Link>
+            <Link aria-label="Ir para todos os projetos" href="/projects">
+              Ver todos
+            </Link>
           </div>
 
           <div className="grid reveal fade-bottom">

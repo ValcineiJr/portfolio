@@ -65,7 +65,12 @@ export function Footer() {
             <ul>
               {techs.map((item) => (
                 <li key={item.name}>
-                  <a target="_blank" href={item.slug} rel="noreferrer">
+                  <a
+                    target="_blank"
+                    aria-label={`Acessar a página ${item.name}`}
+                    href={item.slug}
+                    rel="noreferrer"
+                  >
                     {item.name}
                   </a>
                 </li>
@@ -91,15 +96,18 @@ export function Footer() {
         <div className="icons">
           <ul>
             {mediaIcons.map((item, index) => (
-              <a
-                target="_blank"
-                key={item.slug}
-                style={{ backgroundColor: item.color }}
-                href={item.slug}
-                rel="noreferrer"
-              >
-                <item.icon color={index === 3 ? `#000` : `#fff`} size={15} />
-              </a>
+              <li key={item.slug}>
+                <a
+                  aria-label="Acesso direto para rede social"
+                  target="_blank"
+                  key={item.slug}
+                  style={{ backgroundColor: item.color }}
+                  href={item.slug}
+                  rel="noreferrer"
+                >
+                  <item.icon color={index === 3 ? `#000` : `#fff`} size={15} />
+                </a>
+              </li>
             ))}
           </ul>
         </div>

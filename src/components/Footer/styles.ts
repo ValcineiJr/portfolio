@@ -58,13 +58,13 @@ export const Container = styled.footer`
       }
 
       li {
-        font-size: 1.5rem;
+        font-size: 2rem;
         a {
           color: #737373;
         }
       }
       p {
-        font-size: 1.8rem;
+        font-size: 2rem;
         color: #737373;
       }
     }

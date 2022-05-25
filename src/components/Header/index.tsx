@@ -45,7 +45,12 @@ export function Header() {
           <ul>
             {menuItens.map((item) => (
               <li key={item.name}>
-                <Link href={item.slug}>{item.name}</Link>
+                <Link
+                  aria-label={`Acessar a página ${item.name}`}
+                  href={item.slug}
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -63,6 +68,7 @@ export function Header() {
         />
 
         <button
+          aria-label="Trocar o tema"
           onClick={() =>
             changeTheme(theme === themes.light ? themes.dark : themes.light)
           }

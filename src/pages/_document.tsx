@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-title-in-document-head */
 /* eslint-disable @next/next/no-sync-scripts */
 import React from 'react';
 import Document, {
@@ -44,7 +45,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
-
+          <title>Valcinei Jr - Portifólio</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
@@ -52,15 +53,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
-          <script
-            src="/path/or/uri/to/tinymce.min.js"
-            referrerPolicy="origin"
-          ></script>
-          <script
-            src="https://cdn.tiny.cloud/1/aiuvrqo4cj0jmnvi8lf7x5kvjbecazwmufalkfcksfs91uc3/tinymce/5/tinymce.min.js"
-            referrerPolicy="origin"
-          ></script>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
