@@ -91,7 +91,13 @@ export default function Home() {
         <section className="show-case">
           <div className="wrapper">
             <div className="image reveal fade-left">
-              <Image width={600} height={600} src={banner} alt="" />
+              <Image
+                width={600}
+                height={600}
+                src={banner}
+                priority
+                alt="homem mexendo em telas de computador"
+              />
             </div>
 
             <div className="information reveal fade-right">
