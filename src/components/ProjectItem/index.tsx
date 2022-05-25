@@ -20,7 +20,12 @@ export function ProjectItem({ data }: Props) {
       {data.links.map((link) => (
         <div key={link} className="links">
           <span>Link: </span>
-          <a aria-label="Acessar o projeto" href={link}>
+          <a
+            aria-label="Acessar o projeto"
+            target="_blank"
+            href={link}
+            rel="noreferrer"
+          >
             Acessar o projeto
           </a>
         </div>

@@ -12,8 +12,10 @@ import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 
 import banner from '@/assets/img/banner.gif';
+import api from '@/services/api';
+import { Project } from '@/@types/any';
 
-export default function Home() {
+export default function Home({ projects }: { projects: Project[] }) {
   useScroll();
 
   const { colors } = useTheme();
@@ -39,23 +41,23 @@ export default function Home() {
     },
   ];
 
-  const Card = () => (
+  const Card = ({ data }: { data: Project }) => (
     <CardBody>
       <div className="slide slide1">
         <div className="content">
           <div className="image">
-            <img src="https://github.com/valcineijr.png" alt="" />
+            <img src={data.image} alt="imagem do projeto" />
           </div>
         </div>
       </div>
 
       <div className="slide slide2">
         <div className="content">
-          <h3>Nome do projeto</h3>
-          <p>Pequena descrição falando sobre o que o projeto se refere.</p>
+          <h3>{data.title}</h3>
+          <p>{data.description}</p>
           <div className="link">
             <span>Link: </span>
-            <Link aria-label="Acessar o projeto" href="/5">
+            <Link aria-label="Acessar o projeto" href={data.links[0]}>
               Ir para o projeto
             </Link>
           </div>
@@ -134,10 +136,11 @@ export default function Home() {
           </div>
 
           <div className="grid reveal fade-bottom">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {projects.map((item) => (
+              <>
+                <Card key={item.id} data={item} />
+              </>
+            ))}
           </div>
         </section>
         <Footer />
@@ -147,7 +150,11 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
+  const response = await api.get(`projects/last`);
+
   return {
-    props: {},
+    props: {
+      projects: response.data,
+    },
   };
 }

@@ -237,6 +237,10 @@ export const Container = styled.main`
       flex: 2;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
+      /* @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+      } */
+
       grid-gap: 0 20px;
 
       /* background-color: red; */
@@ -270,7 +274,7 @@ export const CardBody = styled.div`
   .slide {
     flex: 1;
 
-    height: 200px;
+    height: 250px;
 
     transition: 0.5s;
   }
@@ -288,11 +292,13 @@ export const CardBody = styled.div`
 
     transition: 0.7s;
 
-    transform: translateY(100px);
+    transform: translateY(50%);
+
+    background-color: ${({ theme }) => theme.colors.background};
   }
 
   &:hover .slide.slide1 {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   .slide.slide2 {
@@ -306,7 +312,7 @@ export const CardBody = styled.div`
 
     transition: 0.8s;
 
-    transform: translateY(-100px);
+    transform: translateY(-50%);
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 
