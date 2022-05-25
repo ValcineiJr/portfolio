@@ -9,17 +9,17 @@ interface Props {
 export function ProjectItem({ data }: Props) {
   return (
     <Container>
-      <h2>CAPTAIN FOREVER REMIX (2016)</h2>
+      <h2>{data.title}</h2>
 
       <div className="image">
         <figure>
-          <img src="https://picsum.photos/300/200?image=244" />
+          <img src={data.image} alt="" />
         </figure>
       </div>
 
       {data.links.map((link) => (
         <div key={link} className="links">
-          <span>Link: </span> <a href={link}>Portfolio Page</a>
+          <span>Link: </span> <a href={link}>Acessar</a>
         </div>
       ))}
 

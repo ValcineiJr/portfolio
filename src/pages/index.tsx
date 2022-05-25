@@ -11,6 +11,8 @@ import Image from 'next/image';
 import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 
+import banner from '@/assets/img/banner.gif';
+
 export default function Home() {
   useScroll();
 
@@ -89,19 +91,12 @@ export default function Home() {
         <section className="show-case">
           <div className="wrapper">
             <div className="image reveal fade-left">
-              <Image
-                width={600}
-                height={600}
-                placeholder="blur"
-                blurDataURL="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif"
-                src="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif"
-                alt=""
-              />
+              <Image width={600} height={600} src={banner} alt="" />
             </div>
 
             <div className="information reveal fade-right">
               <h6>Design é tudo</h6>
-              <h2>Apresente seus sites dessa forma.</h2>
+              <h2>Apresente seus sites da melhor forma.</h2>
               <p>Ficou interessado?</p>
               <p>Entre em contato pelo botão abaixo.</p>
 

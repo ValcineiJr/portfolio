@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { Project } from '@/@types/any';
-import { getProjects } from '@/database/firebase';
+
+import { getAllProjects } from '@/database/firebase';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method === `GET`) {
-    const result = await getProjects();
+    const result = await getAllProjects();
 
     res.status(200).json(result);
   }
