@@ -12,8 +12,10 @@ import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 
 import banner from '@/assets/img/banner.gif';
-import api from '@/services/api';
+
 import { Project } from '@/@types/any';
+
+import { projects } from '@/utils/dummyData';
 
 export default function Home({ projects }: { projects: Project[] }) {
   useScroll();
@@ -57,9 +59,9 @@ export default function Home({ projects }: { projects: Project[] }) {
           <p>{data.description}</p>
           <div className="link">
             <span>Link: </span>
-            <Link aria-label="Acessar o projeto" href={data.links[0]}>
+            <a target="_blank" href={data.links[0]} rel="noreferrer">
               Ir para o projeto
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -150,11 +152,9 @@ export default function Home({ projects }: { projects: Project[] }) {
 }
 
 export async function getStaticProps() {
-  const response = await api.get(`projects/last`);
-
   return {
     props: {
-      projects: response.data,
+      projects,
     },
   };
 }

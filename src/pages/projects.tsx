@@ -9,10 +9,9 @@ import { Container } from '@/styles/pages/projects';
 
 import exportAsImage from '@/utils/pageToScreen';
 
-import { Project } from '@/@types/any';
+import { projects } from '@/utils/dummyData';
 
 export default function Projects() {
-  const { data: projects } = useFetch<Project[]>(`projects/list`);
   const node = useRef(null);
 
   return (
@@ -20,7 +19,7 @@ export default function Projects() {
       <Header />
 
       <Container>
-        <h1 onClick={() => exportAsImage(node, `test2`)}>Projetos</h1>
+        {/* <h1 onClick={() => exportAsImage(node, `test2`)}>Projetos</h1> */}
 
         <section className="grid">
           {projects?.map((item) => (
