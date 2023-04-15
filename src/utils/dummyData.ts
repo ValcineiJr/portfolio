@@ -15,4 +15,12 @@ export const projects = [
     techs: [`ReactJs`, `NextJS`],
     title: `Portfólio`,
   },
+  {
+    id: `2`,
+    description: `Com todo o seu pessoal, ferramentas e comunicação em um só lugar, você pode trabalhar com mais rapidez e flexibilidade do que nunca.`,
+    image: `https://firebasestorage.googleapis.com/v0/b/portfolio-c914d.appspot.com/o/slack.png?alt=media&token=67c43c46-c9ec-4cb8-91be-533066ffbc10`,
+    links: [`https://slack-icarxudmj-valcineijr.vercel.app`],
+    techs: [`ReactJs`, `NextJS`],
+    title: `Slack`,
+  },
 ];
